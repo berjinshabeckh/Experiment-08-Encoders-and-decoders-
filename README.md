@@ -97,8 +97,8 @@ endmodule
 ```
 /*
 Program for Decoders and verify its truth table in quartus using Verilog programming.
-Developed by: R Guruprasad
-RegisterNumber:212222240033
+Developed by: H.Berjin Shabeck
+RegisterNumber:212222240018
 */
 module decoder(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
 input a,b,c:
