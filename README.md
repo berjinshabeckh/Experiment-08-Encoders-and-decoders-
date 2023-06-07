@@ -1,9 +1,9 @@
 # Experiment-08- Encoders-and-decoders 
-### AIM: To implement 8 to 3 Encoder and  3to8 Decoder using verilog and validate its outputs
+### AIM: 
+To implement 8 to 3 Encoder and  3to8 Decoder using verilog and validate its outputs
 ### HARDWARE REQUIRED:  – PC, Cyclone II , USB flasher
 ### SOFTWARE REQUIRED:   Quartus prime
 ### THEORY 
-
 ## Encoders
 Binary code of N digits can be used to store 2N distinct elements of coded information. This is what encoders and decoders are used for. Encoders convert 2N lines of input into a code of N bits and Decoders decode the N bits into 2N lines.
 
@@ -55,42 +55,69 @@ D7 = X Y Z
 ## Figure -04 8 to 3 Decoder implementation 
 
 ### Procedure
-/* write all the steps invloved */
+```
+Step-1:
+create module encoder and decoder.
 
+Step-2:
+Get inputs and outputs for encoders and decoders.
 
+Step-3:
+perform or operation for encoder and and logic for decoders.
 
-### PROGRAM 
+Step-4:
+perform RTL LOGIC and get waveform.
+
+Step-5:
+End the module.
+```
+### PROGRAM FOR ENCODER
+```
 /*
-Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Program for Encoders and verify its truth table in quartus using Verilog programming.
+Developed by: R Guruprasad
+RegisterNumber:212222240033
 */
-
-
-
-
-
-
+module encoder(a,b,c,do,d1,d2,d3,d4,d5,d6,d7);
+output a, b, c; 
+input do,d1, d2, d3,d4 ,d5,d6,d7;
+or (a, d4, d5, d6, d7);
+or(b, d2, d3, d6, d7); 
+or (c, d1, d3, d5, d7);
+endmodule
+```
 ### RTL LOGIC  
-
-
-
-
-
-
-
-
+![](./encoderrtl.png)
 ### TIMING DIGRAMS  
-
-
-
-
-
+![](./encoderwave.png)
 ### TRUTH TABLE 
+![](./encodertt.png)
 
-
-
-
-
-
+### PROGRAM FOR DECODER
+```
+/*
+Program for Decoders and verify its truth table in quartus using Verilog programming.
+Developed by: R Guruprasad
+RegisterNumber:212222240033
+*/
+module decoder(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+input a,b,c:
+output d0,d1,d2,d3,d4,d5,d6,d7;
+assign d0 = (~a&~b&~c);
+assign d1 = (~a&~b&c);
+assign d2 = (~a&b&~c);
+assign d3 = (~a&b&c);
+assign d4 = (a&~b&~c);
+assign d5 = (a&~b&c);
+assign d6 = (a&b&~c);
+assign d7 = (a&b&c);
+endmodule
+```
+### RTL LOGIC  
+![](./decoderrtl.png)
+### TIMING DIGRAMS  
+![](./decoderwave.png)
+### TRUTH TABLE 
+![](./decodertt.png)
 ### RESULTS 
+Thus the program to desing encoder and decoder is completed.
